@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Portfolio Website</title>
-    <link rel="stylesheet" href="styles/test.css" />
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Adxzan Portolio</title>
     <style>
-      /* * {
-        color: #f4fefd;
-        outline: auto red;
-      } */
       body {
         background-color: #1b2223;
+        margin: 0;
+        padding: 0;
       }
-      main {
-        text-align: center;
-        vertical-align: middle;
+      .burgermenu {
+        display: none
+      }
+      .hdparent {
+        display: none;
       }
     </style>
+    <script src="test.js"></script>
+    <link
+      href="MobileStyleSheet.css"
+      rel="stylesheet"
+      type="text/css"
+      media="only screen and (max-device-width: 480px), only screen and (-webkit-min-device-pixel-ratio: 2), screen and (-webkit-device-pixel-ratio:1.5)"
+    />
   </head>
   <body>
     <header>
-      <h1 class="mname">My Portfolio Website</h1>
-      <div class="headerbc"></div>
-      <nav>
-        <button class="hslink" onclick="window.location.href='test.html'">
-          Home Screen
-        </button>
-        <button class="abmelink" onclick="window.location.href='aboutme.html'">
-          About Me
-        </button>
-      </nav>
+      <header>
+        <div class="header" id="header">
+          <div class="hdparent" id="hdparent">
+            <div class="hdchild hcild1" href="#">Projects</div>
+            <div class="hdchild hcild2" href="#">About Me</div>
+            <div class="hdchild hcild3" href="#">Home</div>
+          </div>
+        </div> 
+      <!-- <h1 class="mname">Adxzan</h1> -->
+      <div class="menu-toggle">
+        <label for="menu-toggle-radio">Dropdown Menu</label>
+        <div>
+        <input type="radio" id="menu-toggle-radio1" name="menu-toggle"  onchange="toggleMenu()" />
+        <label for="menu-toggle-radio1">Flat Menu</label>
+      </div>
+      <div>
+        <input type="radio" id="menu-toggle-radio2" name="menu-toggle" onchange="toggleMenu()" />
+        <label for="menu-toggle-radio2">Stacked Menu</label>
+      </div>
+      </div>
+    <div class="burgermenu" id="burgermenu" >
+        <div class="bmenu" id="bmenu1"></div>
+        <div class="bmenu" id="bmenu2"></div>
+        <div class="bmenu" id="bmenu3"></div>
+      </div>
+      <div class="bmenu-content" id="bmenu-content" style="display: none;">
+        <a class="bmenuc bmc1" href="#">Projects</a>
+        <a class="bmenuc bmc2" href="#">About Me</a>
+        <a class="bmenuc bmc3" href="#">Home</a>
+      </div>
     </header>
+    <div class="parent">
+      <main>
+        <div class="test1"><img src="assets/aboutme/code.jpg" /></div>
+        <div class="test2"><img src="assets/aboutme/coooll.jpg" /></div>
+        <div class="test3" >
+          <img src="assets/aboutme/computer1.png" />
+        </div>
+      </main>
+    </div>
   </body>
 </html>

@@ -1,30 +1,287 @@
-.headerbc {
-  background-color: #3a4f50;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  display: flex;
-}
-.abmelink .hslink {
-  background-color: transparent;
-  position: absolute;
-  padding: 10px;
-  display: block;
+/* General Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b2223;
 }
 
-.abmelink {
-  top: 15px;
-  right: 1%;
+.parent {
   position: fixed;
+  width: 850;
+  height: 50vh;
+  border-radius: 25px;
+  outline-style: auto;
+  outline-width: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.hslink {
-  top: 15px;
-  right: 5%;
+
+/* Header Styles */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .mname {
+  color: blue;
+  text-align: left;
+  position: fixed;
+}
+
+.burgermenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color: white;
+  border-radius: 15%;
+  top: 1%;
+  right: 0.5%;
+  position: fixed;
+}
+.menu {
   position: absolute;
-  display: block;
+  right: 5%;
+  top: 0%;
+  text-decoration: underline;
+  /* margin-right: ; */
+  margin-top: 1.5vh;
+  padding-left: 10px;
+}
+
+.burgermenu > div {
+  background-color: #3a4f50;
+  width: 35px;
+  height: 5px;
+  margin: 2.5px 0;
+  border-radius: 15px;
+  box-shadow: 0.5px 1px 2.5px 0.5px #0ef6cc;
+}
+.bmenu {
+  justify-self: right;
+}
+.bmenu-content {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  right: 0.5%;
+}
+
+.bmenu-content > a {
+  cursor: pointer;
+  background-color: #3a4f50;
+  margin: 5px;
+  padding: 10px;
+  width: 15svh;
+  height: auto;
   text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px 0 #0ef6cc;
+  text-decoration: none;
+  color: #f4fefd;
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .burgermenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .bmenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bmenu-content a {
+    margin: 5px;
+  }
+
+  .bmenu-content a:hover {
+    background-color: #3a4f50;
+  }
+
+  .active {
+    background-color: #3a4f50;
+    opacity: 0;
+  }
+}
+
+/* Main Styles */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  padding: 10px;
+}
+
+.test1,
+.test2,
+.test3 {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 250px;
+  height: auto;
+  margin: 10px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hdparent {
+  background-color: transparent;
+  width: 750;
+  height: 75px;
+  margin: 0;
+  border-radius: 6px;
+  /* box-shadow: 0 5px 10px 0 #000; */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  position: fixed;
+  top: 1%;
+  right: 0.5%;
+}
+.hdchild {
+  cursor: default;
+  background-color: #3a4f50;
+  margin: 5px;
+  width: 150px;
+  height: 50px;
+  vertical-align: middle;
+  font-size: larger;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px 0 #0ef6cc;
+  transition: transform 0.5s ease-in-out;
+  color: #f4fefd;
+}
+
+img {
+  border-radius: 15px;
+  margin: 16px;
+  width: 100%;
+  height: auto;
+}
+
+/* Animations Animations Animations Animations  */
+
+.hdchild:hover,
+.bmenuc:hover {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-name: hdchild;
+  transform: scale(1.2);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  transition: transform 0.5 ease-in;
+}
+
+.hdchild:not(:hover),
+.bmenuc:not(:hover) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-name: hdchild-reverse;
+  transform-origin: center center;
+  transform: scale(1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes hdchild {
+  0% {
+    background-color: #2b8779;
+  }
+  10% {
+    background-color: #35625e;
+  }
+  20% {
+    background-color: #30746c;
+  }
+  30% {
+    background-color: #2b8779;
+  }
+  40% {
+    background-color: #269987;
+  }
+  50% {
+    background-color: #22ac95;
+  }
+  60% {
+    background-color: #1dbea3;
+  }
+  70% {
+    background-color: #1dbea3;
+  }
+  80% {
+    background-color: #18d1b0;
+  }
+  90% {
+    background-color: #13e3be;
+  }
+  100% {
+    background-color: #0ef6cc;
+  }
+}
+@keyframes hdchild-reverse {
+  0% {
+    background-color: #0ef6cc;
+  }
+  10% {
+    background-color: #13e3be;
+  }
+  20% {
+    background-color: #18d1b0;
+  }
+  30% {
+    background-color: #1dbea3;
+  }
+  40% {
+    background-color: #1dbea3;
+  }
+  50% {
+    background-color: #1dbea3;
+  }
+  60% {
+    background-color: #22ac95;
+  }
+  70% {
+    background-color: #269987;
+  }
+  80% {
+    background-color: #2b8779;
+  }
+  90% {
+    background-color: #30746c;
+  }
+  100% {
+    background-color: #35625e;
+  }
 }
