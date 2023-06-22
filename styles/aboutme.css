@@ -1,0 +1,31 @@
+.pp {
+  text-align: center;
+  vertical-align: middle;
+}
+.back {
+  font-size: larger;
+  background-color: transparent; /* Red */
+  border-style: dotted;
+  border-color: red;
+}
+
+.nameheader {
+  margin: auto;
+  text-align: center;
+  position: fixed;
+}
+
+nav {
+  background-color: transparent;
+  border: 5px;
+  width: 100px;
+  height: 50px;
+  vertical-align: middle;
+  /* border-spacing: 50px; */
+  display: flex;
+  position: absolute;
+  float: right;
+  text-align: center;
+  font-size: larger;
+  margin: 0 90%;
+}
